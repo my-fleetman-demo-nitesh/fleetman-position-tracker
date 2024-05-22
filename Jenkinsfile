@@ -17,11 +17,6 @@ pipeline {
             git credentialsId: 'GitHub', url: "https://github.com/${ORGANIZATION_NAME}/${SERVICE_NAME}"
          }
       }
-      stage('Git Pull') {
-         steps {
-            sh '''git pull --rebase origin master'''
-         }
-      }
       stage('Build') {
          steps {
             sh '''mvn clean package'''
