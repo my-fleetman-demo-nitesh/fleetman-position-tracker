@@ -19,7 +19,7 @@ pipeline {
       }
       stage('Git Pull') {
          steps {
-            sh '''git pull'''
+            sh '''git pull --rebase origin master'''
          }
       }
       stage('Build') {
