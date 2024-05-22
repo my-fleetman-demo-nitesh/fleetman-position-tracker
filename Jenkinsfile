@@ -19,6 +19,7 @@ pipeline {
       }
       stage('Build') {
          steps {
+            sh '''git pull'''
             sh '''mvn clean package'''
          }
       }
